@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio 12</title>
+
+
+<body>
+
+<h1>Il Bar Segreto</h1>
+
+Età:<br>
+<input type="number" id="eta">
+<p>Inserisci la tua età (devi avere almeno 18 anni)</p>
+
+Password:<br>
+<input type="text" id="password">
+<p>Inserisci la password segreta</p>
+
+Soldi (€):<br>
+<input type="number" id="soldi">
+<p>Inserisci quanti soldi hai (minimo 10€)</p>
+
+<button onclick="controllaAccesso()">Controlla Accesso</button>
+
+<p id="risultato"></p>
+
+<script>
+
+function controllaAccesso() {
+
+let eta = document.getElementById("eta").value;
+let password = document.getElementById("password").value;
+let soldi = document.getElementById("soldi").value;
+let risultato = document.getElementById("risultato");
+
+if (eta < 18) {
+    risultato.innerHTML = "Accesso negato (sei minorenne)";
+}
+else if (password != "banana") {
+    risultato.innerHTML = "Password sbagliata";
+}
+else if (soldi < 10) {
+    risultato.innerHTML = "Soldi insufficienti";
+}
+else {
+    risultato.innerHTML = "Puoi entrare nel bar segreto";
+}
+
+}
+
+</script>
+
+</body>
+</html>
